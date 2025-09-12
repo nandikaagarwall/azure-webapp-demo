@@ -68,20 +68,7 @@ cat actions.log
 tail -f actions.log
 ```
 
----
 
-## What to screenshot (put images in `docs/screenshots/`)
-
-1. App Service → Overview (`01_app_overview.png`) — shows app URL and status
-2. Deployment Center (`02_deployment_center.png`) — shows GitHub repo connected
-3. Authentication blade (`03_authentication.png`) — shows identity provider and redirect setting
-4. Browser showing HTTPS + lock (`04_https_connected.png`)
-5. `cat /home/site/wwwroot/logs/actions.log` output (`05_logs_file.png`)
-6. `tail -f` showing live entries while interacting (`06_log_tail.png`)
-7. `ls -l /home/site/wwwroot` showing `index.php` and `logs/` (`07_kudu_files.png`)
-8. Defender for Cloud showing 0 recommendations (`08_defender_zero_recs.png`)
-9. Diagnostic settings screenshot if configured (`09_diagnostic_settings.png`)
-10. Demo app page screenshot (`10_demo_app_page.png`)
 
 ---
 
