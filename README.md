@@ -1,91 +1,76 @@
-# Azure Security Lab — Secure Web App
+# Azure Web App Security Lab 🚀
 
-**Live demo:** [https://my-sec-lab-app-deh6fneafacvf8gz.centralindia-01.azurewebsites.net](https://my-sec-lab-app-deh6fneafacvf8gz.centralindia-01.azurewebsites.net)
-**Repo:** [https://github.com/nandikaagarwall/azure-webapp-demo](https://github.com/nandikaagarwall/azure-webapp-demo)
-
----
-
-## Project overview
-
-This is a beginner-to-intermediate cloud security lab built on Microsoft Azure App Service (Free tier). It demonstrates secure deployment patterns for a small web app, including:
-
-* HTTPS (Azure default)
-* Authentication (Azure AD identity provider)
-* Custom application logging (local `logs/actions.log`)
-* Basic monitoring and diagnostics
-
-This project is intentionally implemented using only free-tier features so it can be reproduced without cost.
+This project demonstrates how to deploy, secure, and monitor a simple web application using **Microsoft Azure Free Tier**.  
+It includes authentication, HTTPS/TLS, logging, monitoring, and security baselines — making it a great **portfolio-ready project**.
 
 ---
 
-## Architecture
+## 🌐 Live Demo
 
-Simple architecture (see `docs/architecture.png` for diagram):
-
-```
-GitHub (main) -> Azure App Service (my-sec-lab-app)
-                          ├─ /home/site/wwwroot (index.php + logs/)
-                          ├─ Diagnostic settings -> (optional) Storage or Log Analytics
-                          └─ (Optional) Key Vault for secrets
-```
+🔗 [Visit the Web App](https://my-sec-lab-app.centralindia-01.azurewebsites.net)
 
 ---
 
-## Features implemented
+## 🏗️ Architecture
 
-* App deployed from GitHub (Deployment Center) — continuous deployment configured
-* Authentication provider configured (Microsoft Identity) — unauthenticated users are redirected to sign-in
-* Custom logging: `/home/site/wwwroot/logs/actions.log` (page loads, button clicks, login attempts)
-* Live log inspection via SSH/Kudu (`cat logs/actions.log` / `tail -f logs/actions.log`)
-* Defender for Cloud free-tier posture checked (0 recommendations)
+The high-level architecture of this project:
+
+![Architecture](docs/architecture.png)
 
 ---
 
-## How to run / reproduce (short)
+## 📸 Screenshots
 
-1. Fork this repo.
-2. Create an Azure resource group and App Service plan (Free tier) and web app, for example:
+### 1. App Service Overview  
+![App Overview](docs/01_app_overview.png.jpg)
 
-```bash
-# create resource group
-az group create -n rg-sec-lab -l centralindia
+### 2. Deployment Center  
+![Deployment Center](docs/02_deployment_center..jpg)
 
-# create app plan (Free)
-az appservice plan create -g rg-sec-lab -n sec-lab-plan --sku F1 --is-linux
+### 3. Authentication Setup  
+![Authentication](docs/03_authentication.jpg)
 
-# create web app
-az webapp create -g rg-sec-lab -p sec-lab-plan -n my-sec-lab-app --runtime "PHP|8.4"
+### 4. HTTPS Enforced  
+![HTTPS Connected](docs/04_https_connected.jpg)
 
-# link GitHub repo (deployment)
-az webapp deployment source config --name my-sec-lab-app --resource-group rg-sec-lab --repo-url "https://github.com/nandikaagarwall/azure-webapp-demo" --branch main
-```
+### 5. Log Tail Streaming  
+![Log Tail](docs/06_log_tail.jpg)
 
-3. Use SSH/Kudu to view logs:
+### 6. File Access via Kudu  
+![Kudu Files](docs/07_kudu_files.jpg)
 
-```bash
-cd /home/site/wwwroot/logs
-cat actions.log
-tail -f actions.log
-```
+### 7. Microsoft Defender – Zero Recommendations  
+![Defender Recommendations](docs/08_defender_zero_recs.jpg)
 
+### 8. Live Demo Web App Page  
+![Demo App](docs/10_demo_app_page.jpg)
+
+---
+
+## 📊 Features Implemented
+
+- ✅ Azure Web App Deployment (Free Tier)  
+- ✅ GitHub Repository CI/CD Deployment  
+- ✅ Authentication via Microsoft Identity Platform  
+- ✅ HTTPS/TLS Enabled  
+- ✅ Logging & Monitoring (log stream + custom logs)  
+- ✅ Azure Security Center (Defender for Cloud baseline check)  
+
+---
+
+## 📂 Repository Structure
+azure-webapp-demo/
+│── docs/ # Architecture diagram + screenshots
+│── index.html / php # Web app files
+│── README.md # Project documentation
 
 
 ---
 
-## Security notes & limitations
+## 🧑‍💻 Author
 
-* This lab uses only free-tier resources. Advanced protections (Azure Firewall, full Defender standard, WAF) require paid plans.
-* For production: use managed identities for all resource access, Key Vault for secrets, VNet integration, and Defender Standard.
-
----
-
-## Demo & artifacts
-
-* Short demo video: `docs/demo.mp4` (recommended 30–60s) — show app, login flow, and live logs
-* Architecture diagram: `docs/architecture.png`
+👤 Nandika Agarwal  
+📧 www.linkedin.com/in/nandikaagarwal
 
 ---
 
-## Contact
-
-Nandika Agarwall — [https://github.com/nandikaagarwall](https://github.com/nandikaagarwall) — [nandikaagarwall@example.com](mailto:nandikaagarwall@example.com)
