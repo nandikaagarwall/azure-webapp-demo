@@ -7,7 +7,7 @@ It includes authentication, HTTPS/TLS, logging, monitoring, and security baselin
 
 ## 🌐 Live Demo
 
-🔗 [Visit the Web App](https://my-sec-lab-app.centralindia-01.azurewebsites.net)
+🔗 [Visit the Web App](my-sec-lab-app-deh6fneafacvf8gz.centralindia-01.azurewebsites.net)
 
 ---
 
