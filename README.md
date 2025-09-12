@@ -26,24 +26,31 @@ App Service overview — shows running app and Azure app URL.
 ![App Overview](docs/01_app_overview.png.jpg)
 
 ### 2. Deployment Center  
+GitHub integration (Deployment Center) — CI/CD configured.
 ![Deployment Center](docs/02_deployment_center..jpg)
 
 ### 3. Authentication Setup  
+Authentication configured with Microsoft Identity provider in Azure App Service
 ![Authentication](docs/03_authentication.jpg)
 
 ### 4. HTTPS Enforced  
+HTTPS enforced — Azure provides TLS for azurewebsites.net.
 ![HTTPS Connected](docs/04_https_connected.jpg)
 
 ### 5. Log Tail Streaming  
+Live log tail — log entries appear in real time
 ![Log Tail](docs/06_log_tail.jpg)
 
 ### 6. File Access via Kudu  
+Deployed files (index.php + logs folder) inside wwwroot
 ![Kudu Files](docs/07_kudu_files.jpg)
 
 ### 7. Microsoft Defender – Zero Recommendations  
+Azure Defender for Cloud free tier shows 0 security recommendations for this app, indicating that basic best practices (HTTPS, Authentication, secure deployment) are already applied.
 ![Defender Recommendations](docs/08_defender_zero_recs.jpg)
 
 ### 8. Live Demo Web App Page  
+Live app UI — interactive controls for simulating events.
 ![Demo App](docs/10_demo_app_page.jpg)
 
 ---
