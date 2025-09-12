@@ -22,6 +22,7 @@ The high-level architecture of this project:
 ## 📸 Screenshots
 
 ### 1. App Service Overview  
+App Service overview — shows running app and Azure app URL.
 ![App Overview](docs/01_app_overview.png.jpg)
 
 ### 2. Deployment Center  
